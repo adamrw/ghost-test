@@ -23,9 +23,9 @@ config = {
 
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.PORT
         }
     },
 
@@ -51,17 +51,21 @@ config = {
         // ```
 
         database: {
-            client: 'sqlite3',
+            client: 'postgres',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+                host: 'ec2-54-243-44-191.compute-1.amazonaws.com',
+                user: 'pwavxmjuvvvzni',
+                password: '8o3FmlzXLIiYO57an-9DyS0elZ',
+                database: 'd67393fv851kie'
+                port: '5432'
             },
             debug: false
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.PORT
         },
         paths: {
             contentPath: path.join(__dirname, '/content/')
@@ -82,8 +86,8 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
-            port: '2369'
+            host: '0.0.0.0',
+            port: process.env.PORT
         },
         logging: false
     },
@@ -103,8 +107,8 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
-            port: '2369'
+            host: '0.0.0.',
+            port: process.env.PORT
         },
         logging: false
     },
@@ -124,8 +128,8 @@ config = {
             }
         },
         server: {
-            host: '127.0.0.1',
-            port: '2369'
+            host: '0.0.0.0',
+            port: process.env.PORT
         },
         logging: false
     }
